@@ -51,7 +51,7 @@
             android:icon="@drawable/ic_dt2w" />
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="audio"
         android:title="@string/audio_title">
 
@@ -97,7 +97,7 @@
             app:min="-10"
             android:icon="@drawable/ic_mic"
             android:title="@string/microphone_gain" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="torch"

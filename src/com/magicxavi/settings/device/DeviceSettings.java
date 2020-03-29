@@ -22,9 +22,9 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String FPWAKEUP_PATH = "/sys/devices/soc.0/fpc_fpc1020.110/enable_wakeup";
 
     // Dirac
-    private static final String PREF_ENABLE_DIRAC = "dirac_enabled";
-    private static final String PREF_HEADSET = "dirac_headset_pref";
-    private static final String PREF_PRESET = "dirac_preset_pref";
+    //private static final String PREF_ENABLE_DIRAC = "dirac_enabled";
+    //private static final String PREF_HEADSET = "dirac_headset_pref";
+    //private static final String PREF_PRESET = "dirac_preset_pref";
 
     // Gestures
     private static final String CATEGORY_GESTURES= "gestures";
@@ -54,10 +54,10 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final int MAX_VIBRATION = 3596;
 
     // Audio
-    public static final  String PREF_HEADPHONE_GAIN = "headphone_gain";
-    public static final  String PREF_MICROPHONE_GAIN = "microphone_gain";
-    public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
-    public static final  String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
+    //public static final  String PREF_HEADPHONE_GAIN = "headphone_gain";
+    //public static final  String PREF_MICROPHONE_GAIN = "microphone_gain";
+    //public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
+    //public static final  String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
     // Spectrum
     public static final String PREF_SPECTRUM = "spectrum";
@@ -69,8 +69,8 @@ public class DeviceSettings extends PreferenceFragment implements
     //public static final String QC_LIMIT_PATH = "/sys/devices/soc.0/qpnp-smbcharger-16/power_supply/battery/constant_charge_current_max";
 
     private SecureSettingListPreference mSPECTRUM;
-    private SecureSettingCustomSeekBarPreference mHeadphoneGain;
-    private SecureSettingCustomSeekBarPreference mMicrophoneGain;
+    //private SecureSettingCustomSeekBarPreference mHeadphoneGain;
+    //private SecureSettingCustomSeekBarPreference mMicrophoneGain;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -86,11 +86,11 @@ public class DeviceSettings extends PreferenceFragment implements
         TorchBrightness2.setEnabled(FileUtils.fileWritable(TORCH_2_BRIGHTNESS_PATH));
         TorchBrightness2.setOnPreferenceChangeListener(this);
 
-        mHeadphoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
-        mHeadphoneGain.setOnPreferenceChangeListener(this);
+        //mHeadphoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
+        //mHeadphoneGain.setOnPreferenceChangeListener(this);
 
-        mMicrophoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
-        mMicrophoneGain.setOnPreferenceChangeListener(this);
+        //mMicrophoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
+        //mMicrophoneGain.setOnPreferenceChangeListener(this);
 
         //if (FileUtils.fileWritable(QC_LIMIT_PATH)) {
         //SecureSettingCustomSeekBarPreference QuickCharge = (SecureSettingCustomSeekBarPreference) findPreference(PREF_QC_LIMIT);
@@ -117,29 +117,29 @@ public class DeviceSettings extends PreferenceFragment implements
         mSPECTRUM.setSummary(mSPECTRUM.getEntry());
         mSPECTRUM.setOnPreferenceChangeListener(this);
 
-        boolean enhancerEnabled;
-        try {
-            enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
-        } catch (java.lang.NullPointerException e) {
-            getContext().startService(new Intent(getContext(), DiracService.class));
-            try {
-                enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
-            } catch (NullPointerException ne) {
-                // Avoid crash
-                ne.printStackTrace();
-                enhancerEnabled = false;
-            }
-        }
+        //boolean enhancerEnabled;
+        //try {
+        //    enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
+        //} catch (java.lang.NullPointerException e) {
+        //    getContext().startService(new Intent(getContext(), DiracService.class));
+        //    try {
+        //        enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
+        //    } catch (NullPointerException ne) {
+        //        // Avoid crash
+        //        ne.printStackTrace();
+        //        enhancerEnabled = false;
+        //    }
+        //}
 
-        SecureSettingSwitchPreference enableDirac = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_DIRAC);
-        enableDirac.setOnPreferenceChangeListener(this);
-        enableDirac.setChecked(enhancerEnabled);
+        //SecureSettingSwitchPreference enableDirac = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_DIRAC);
+        //enableDirac.setOnPreferenceChangeListener(this);
+        //enableDirac.setChecked(enhancerEnabled);
 
-        SecureSettingListPreference headsetType = (SecureSettingListPreference) findPreference(PREF_HEADSET);
-        headsetType.setOnPreferenceChangeListener(this);
+        //SecureSettingListPreference headsetType = (SecureSettingListPreference) findPreference(PREF_HEADSET);
+        //headsetType.setOnPreferenceChangeListener(this);
 
-        SecureSettingListPreference preset = (SecureSettingListPreference) findPreference(PREF_PRESET);
-        preset.setOnPreferenceChangeListener(this);
+        //SecureSettingListPreference preset = (SecureSettingListPreference) findPreference(PREF_PRESET);
+        //preset.setOnPreferenceChangeListener(this);
 
 
         if (FileUtils.fileWritable(FPWAKEUP_PATH)) {
@@ -184,32 +184,32 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setValue(VIBRATION_STRENGTH_PATH, vibrationValue);
                 break;
 
-            case PREF_ENABLE_DIRAC:
-                try {
-                    DiracService.sDiracUtils.setEnabled((boolean) value);
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setEnabled((boolean) value);
-                }
-                break;
+            //case PREF_ENABLE_DIRAC:
+            //    try {
+            //        DiracService.sDiracUtils.setEnabled((boolean) value);
+            //    } catch (java.lang.NullPointerException e) {
+            //        getContext().startService(new Intent(getContext(), DiracService.class));
+            //        DiracService.sDiracUtils.setEnabled((boolean) value);
+            //    }
+            //    break;
 
-            case PREF_HEADSET:
-                try {
-                    DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
-                }
-                break;
+            //case PREF_HEADSET:
+            //    try {
+            //        DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
+            //    } catch (java.lang.NullPointerException e) {
+            //        getContext().startService(new Intent(getContext(), DiracService.class));
+            //        DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
+            //    }
+            //    break;
 
-            case PREF_PRESET:
-                try {
-                    DiracService.sDiracUtils.setLevel(String.valueOf(value));
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setLevel(String.valueOf(value));
-                }
-                break;
+            //case PREF_PRESET:
+            //    try {
+            //        DiracService.sDiracUtils.setLevel(String.valueOf(value));
+            //    } catch (java.lang.NullPointerException e) {
+            //        getContext().startService(new Intent(getContext(), DiracService.class));
+            //        DiracService.sDiracUtils.setLevel(String.valueOf(value));
+            //    }
+            //    break;
 
             case PREF_SPECTRUM:
                 mSPECTRUM.setValue((String) value);
@@ -229,13 +229,13 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
                 break;
 
-            case PREF_HEADPHONE_GAIN:
-                FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
-                break;
+            //case PREF_HEADPHONE_GAIN:
+            //    FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
+            //    break;
 
-            case PREF_MICROPHONE_GAIN:
-                FileUtils.setValue(MICROPHONE_GAIN_PATH, (int) value);
-                break;
+            //case PREF_MICROPHONE_GAIN:
+            //    FileUtils.setValue(MICROPHONE_GAIN_PATH, (int) value);
+            //    break;
 
             //case PREF_QC_LIMIT:
             //    double quickchargeValue = (int) value * 1000.0;

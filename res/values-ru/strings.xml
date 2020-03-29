@@ -33,18 +33,18 @@
     <string name="fastcharge_summary">Использовать быструю зарядку при подключении к USB</string>
     <string name="qc_limit_summary">Установить лимит зарядки в mA</string>
 
-    <!-- Audio amplification -->
+    <!-- Audio amplification
     <string name="headphone_gain">Усиление наушников</string>
     <string name="microphone_gain">Усиление микрофона</string>
-    <string name="audio_title">Аудио</string>
+    <string name="audio_title">Аудио</string> -->
 
-    <!-- Dirac settings -->
+    <!-- Dirac settings
     <string name="dirac_title">Mi Оптимизатор звука</string>
     <string name="dirac_summary">Oтимизирует качество звучания</string>
     <string name="dirac_headset_title">Выберите тип наушников</string>
-    <string name="dirac_preset_title">Выберите пресет</string>
+    <string name="dirac_preset_title">Выберите пресет</string> -->
 
-    <!-- Dirac settings: Headset types -->
+    <!-- Dirac settings: Headset types
     <string name="dirac_headset_default">По умолчанию</string>
     <string name="dirac_headset_earbuds">Mi Earbuds</string>
     <string name="dirac_headset_in_ear_2013">Mi In-Ear (2013)</string>
@@ -66,9 +66,9 @@
     <string name="dirac_headset_half_in_ear">Mi Half In-Ear</string>
     <string name="dirac_headset_in_ear2">Mi In-Ear 2</string>
     <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
-    <string name="dirac_headset_earphone">Mi Earphones</string>
+    <string name="dirac_headset_earphone">Mi Earphones</string> -->
 
-    <!-- Dirac settings: Equalizer presets -->
+    <!-- Dirac settings: Equalizer presets
     <string name="dirac_preset_default">По умолчанию</string>
     <string name="dirac_preset_rock">Рок</string>
     <string name="dirac_preset_jazz">Джаз</string>
@@ -79,7 +79,7 @@
     <string name="dirac_preset_electronic">Электроника</string>
     <string name="dirac_preset_country">Кантри</string>
     <string name="dirac_preset_dance">Танцевальная</string>
-    <string name="dirac_preset_metal">Металл</string>
+    <string name="dirac_preset_metal">Металл</string> -->
 
 	<!-- Torch -->
     <string name="torch_title">Светодиод</string>
