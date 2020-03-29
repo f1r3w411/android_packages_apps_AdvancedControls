@@ -62,7 +62,7 @@
         <item>230 230 244 35 35 144 144 0</item>
     </array>
 
-        <!-- Values for Dirac headset pref -->
+        <!-- Values for Dirac headset pref
     <string-array name="dirac_headset_pref_entries" translatable="false">
         <item>@string/dirac_headset_default</item>
         <item>@string/dirac_headset_earbuds</item>
@@ -112,9 +112,9 @@
         <item>21</item>
         <item>22</item>
         <item>23</item>
-    </string-array>
+    </string-array> -->
 
-    <!-- Values for Dirac preset pref -->
+    <!-- Values for Dirac preset pref
     <string-array name="dirac_preset_pref_entries" translatable="false">
         <item>@string/dirac_preset_default</item>
         <item>@string/dirac_preset_rock</item>
@@ -141,5 +141,5 @@
         <item>"0,0,-2,-2,2,2,0"</item>
         <item>"0,4,2,0,-2,-2,4"</item>
         <item>"2,0,0,-2,-4,0,0"</item>
-    </string-array>
+    </string-array> -->
 </resources>
