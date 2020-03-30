@@ -1,1 +1,1 @@
-# android_packages_apps_AdvancedControls
+Advanced Controls 2 by Magicxavi
