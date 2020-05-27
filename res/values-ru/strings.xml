@@ -14,8 +14,8 @@
 -->
 <resources>
     <!-- App name and summary -->
-    <string name="advanced_settings">AdvancedControls 2</string>
-    <string name="advanced_settings_summary">Настройки устройства</string>
+    <string name="advanced_settings">Mi Parts</string>
+    <string name="advanced_settings_summary">Дополнительные настройки устройства от Magicxavi</string>
 
 	<!-- Fingerprint options -->
     <string name="fp_title">Настройки сканера отпечатков</string>
